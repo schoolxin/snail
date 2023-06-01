@@ -35,8 +35,11 @@
 # random 模块
 * random.random() 返回[0.0,1.0)之间的浮点数
 * random.randint(5,10) 返回[5,10] 之间的整数
-
-
+* random.randrange(5,10) 返回[5,10) 之间的整数
+* random.uniform(5,10) 返回[5,10] 之间的浮点数
+* random.choice([1,2,3,4,56,4]) # 从列表中选一个数
+* random.shuffle(a) # 随机打乱元素的顺序 没有返回值 原地打乱
+* 
 
 
 
