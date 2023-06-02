@@ -35,8 +35,17 @@ r4 = random.uniform(5, 10)  # [5,10] 浮点数
 print(r4)
 random.choice([1, 2, 3, 4, 56, 4])  # 从列表中选一个数
 a = [1, 2, 3, 4, 5]
-random.shuffle(a) # 原地改变
+random.shuffle(a)  # 原地改变
 print(a)
 
-s = random.sample(a,2)
+s = random.sample(a, 2)
 print(s)
+
+str = "helloworld"
+print(str[0:len(str)])
+print("++++++++++++++++++++++++++++++++++")
+str1 = "欢迎大家来到蜗牛学院学习python课程"
+r1 = str1[-3:-8:-1]
+# r2 = str1[-8:-2:-1]
+print(r1)
+print(r2)
