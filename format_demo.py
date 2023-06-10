@@ -49,3 +49,8 @@ r1 = str1[-3:-8:-1]
 # r2 = str1[-8:-2:-1]
 print(r1)
 print(r2)
+print(str.capitalize())
+print(str1.count("学"))
+
+str2 = "#hello#world#"
+print(str2.strip('#'))  # 默认删除字符串两边的空白 如果指定了要删除的字符 则删除字符串两边的指定的字符
