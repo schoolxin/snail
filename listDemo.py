@@ -26,3 +26,15 @@ al.sort(key=lambda x:int(x))
 print(al)
 print(al.reverse())
 print(al)
+al.clear() # 清空列表元素
+# 列表复制
+a = [1,2,3]
+b = a # 浅拷贝 只是拷贝引用
+c = a.copy() # 深拷贝 可以得到两个独立的列表
+d = a[:]
+a.append(4)
+
+print(c)
+print(a)
+print(b)
+print(d)
