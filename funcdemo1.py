@@ -46,10 +46,42 @@ n1 = "6666"
 fun2(n1)
 print(n1)
 
+
 def fun3(al):
     al.append("33")
     print(al)
 
-als = [1,2,3,4,4]
+
+als = [1, 2, 3, 4, 4]
 fun3(als)
 print(als)
+
+print("----------------变量作用域------------------")
+
+total = 0
+
+
+def sum(a, b):
+    global total
+    total = a + b
+    print("局部变量total", total)
+    return total
+
+
+print(sum(4, 5))
+print("全局变量total", total)
+
+func = lambda x, y: x + y  # func 是我们定义的匿名函数的指针(引用)
+print(func(1, 2))
+
+print("巧用lambda")
+
+
+def for_sort(x):
+    return list(x.values())[0]
+
+
+mylist = [{'en': 2}, {'math': 1}, {'chinese': 3}]
+# mylist.sort(key=for_sort)
+mylist.sort(key=lambda item: list(item.values())[0])
+print(mylist)
