@@ -152,9 +152,17 @@
 > 如果一个文件作为主程序执行的时候__name__的值为__main__ 如果是被作为模块导入的话,__name__的值为文件名比如py2导入py1 那么__name__值为py1
 
 # pip 管理第三方库
-* 
-
-
+* pip list 查看所有的第三方包
+* pip install 安装第三方包
+* pip install -i 指定安装时 使用的镜像服务器 比如国内的镜像 install -i https://pypi.douban.com/simple<包名>
+* pip install -U<包名> 升级第三方包
+* pip uninstall 卸载指定的第三方包
+* pip freeze 查看当前python环境中所有已安装的包的版本 可以生成一个requirements文件(pip freeze > requirements.txt)
+* pip install  -r 根据requirements文件快速安装第三方包
+* 使用 requirements.txt文件 快速的将其他环境备份出来的包安装到现在的环境中(pip install  -r requirements.txt)
+* 上面的操作可以保证多个环境中的包版本一致
+* pip show <包名> 查看具体包的信息
+* pip search<包名> 根据指定的关键字搜索包
 
 
 
