@@ -10,3 +10,5 @@ if __name__ == '__main__':
     mysums = mysum(4,5)
     print("mysum",mysums)
     print("模块名",__name__)
+
+print(dir([]))
