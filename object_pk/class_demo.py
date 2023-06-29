@@ -37,9 +37,12 @@ class Student(object):
 
 class woniuStudent(Student):
     def __init__(self,name, age, stuno,adress):
-        super().__init__(name,age,stuno)
+        # super().__init__(name,age,stuno)
+        Student.__init__(self,name,age,stuno)
         self.address = adress
         pass
+    def study(self):
+        print("在子类中study方法被调用")
     # pass
 
 if __name__ == "__main__":
@@ -54,3 +57,4 @@ if __name__ == "__main__":
     ws.classmethodDemo1()
     print(ws.address)
     print(ws.names)
+    ws.study()
