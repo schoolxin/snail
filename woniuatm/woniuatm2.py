@@ -32,22 +32,21 @@ def reg():
 
 
 def login():
-    uname = input("请输入用户名")
-    upass = input("请输入密码")
     while True:
+        uname = input("请输入用户名")
+        upass = input("请输入密码")
         if uname in usename:
             uindex = usename.index(uname)
             if password[uindex] == upass:
                 print("恭喜你登陆成功")
                 break
             else:
-                print("密码错误,请重新输入密码")
-                upass = input("请输入密码")
-                continue
+                print("密码或用户名错误,请重新输入")
+                # upass = input("请输入密码")
+
         else:
-            print("用户名错误，请重新输入用户名")
-            uname = input("请输入用户名")
-            continue
+            print("密码或用户名错误，请重新输入")
+            # uname = input("请输入用户名")
 
 
 if __name__ == "__main__":
