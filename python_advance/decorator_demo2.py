@@ -12,9 +12,9 @@ def timer(func):
 
 
 @timer # foo = timer(foo)
-def foo(*args,**kwargs):
+def foo(name,age):
     time.sleep(3)
-    print("in foo",args)
+    print("in foo",name,age)
 
 
 # foos = timer(foo)
