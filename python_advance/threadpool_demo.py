@@ -4,7 +4,7 @@
 # @Author    :dzz
 # @Function  :
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed, wait, ALL_COMPLETED,FIRST_COMPLETED
 
 executor = ThreadPoolExecutor(max_workers=3)  # 创建了一个线程池
 
@@ -30,7 +30,13 @@ if __name__ == "__main__":
     urls = [4, 2, 3]  # 模拟抓取网页的地址
     # 通过列表推导式构造多线程任务
     all_tasks = [executor.submit(get_html, url, "task" + str(url)) for url in urls]
-
-    for item in as_completed(all_tasks):  # as_completed 是一个生成器
-        data = item.result()
-        print("任务返回值是{}".format(data))
+    #
+    # for item in as_completed(all_tasks):  # as_completed 是一个生成器
+    #     data = item.result()
+    #     print("任务返回值是{}".format(data))
+    # 相当于把每一个任务映射到方法上 然后自动提交到线程池中
+    # for data in executor.map(get_html, urls, ['a', 'b', 'c']):  # 按任务的输入顺序输出结果  而as_completed 时按任务的执行时长来输出结果
+    #     print("任务返回值是{}".format(data))
+    # wait方法 主要时用来阻塞主线程
+    wait(all_tasks, return_when=FIRST_COMPLETED)  # 让主线程阻塞 直到指定的条件成立（等待子线程全部执行完之后 才开始执行主线程）
+    print("代码执行完毕")
