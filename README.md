@@ -521,8 +521,12 @@
 ## 线程间的通讯机制
 * 可以使用queue队列，event condition
 
-##线程间的消息隔离机制
+## 线程间的消息隔离机制
 * threading.local() 研究一下
+
+## 线程池
+* concurrent.futures中的ThreadPoolExecutor
+
 
 
 
