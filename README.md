@@ -582,5 +582,7 @@
 * 使用Pool类来实现进程池
 * 使用concurrent_futures模块提供的ProcessPoolExecutor来实现进程池
 
+## 线程同步信号量
 
+* semaphore的使用，控制多线程执行的一把锁
 
