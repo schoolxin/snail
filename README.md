@@ -586,3 +586,11 @@
 
 * semaphore的使用，控制多线程执行的一把锁
 
+## 可迭代对象
+
+* 只要定义了可以返回一个迭代器的_iter_方法，或者定义了可以支持下标索引的_getitem_方法，那么它就是可迭代对象，通俗讲就是可以通过for循环进行遍历
+* 如何判断一个对象是否是可迭代
+
+> 1.isinstance+iterable（collections）
+> 2.hasattr+_getitem_
+
