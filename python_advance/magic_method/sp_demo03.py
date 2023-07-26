@@ -33,9 +33,10 @@
 
 class stu:
 
-
-    def __init__(self, name):  # 负责初始化类的实例，实例是有__new__方法传递过来，也就是这里的self
+    def __init__(self, name, age):  # 负责初始化类的实例，实例是有__new__方法传递过来，也就是这里的self
         print("我是{}".format(name))
+        self.__age = age
+        self.name = name
 
     # cls 表示的是类
     # 类属性
@@ -47,8 +48,8 @@ class stu:
         return cls.__isinstancess  # 如果有实例，则直接返回实例
 
 
-s1 = stu('wang')
-s2 = stu('wang')
-print(s1)
-print(s2)
-
+s = stu('www', 90)
+print(dir(s))
+print(dir(stu)) # 不包含实例属性
+print(s.__dir__())
+print(s._stu__age)
