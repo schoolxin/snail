@@ -657,7 +657,19 @@
 > `__getattribute__(self,xxxx)`:访问对象的任意属性时被调用,不管属性是否存在
 > `__getattr__(self,xxx)`:访问对象的xxx属性且该属性不存在时被调用，背后是当出现AttributeError异常时并且未被手工捕获时才会调用
 > `__setattr__(self,xxx)`:当对属性xxx赋值是调用
-> `__delattr(self,xxx)__`:当删除对象的xxx属性时被调用
+> `__delattr(self,xxx)__`:当删除对象的xxx属性时被调用,不管该属性是否存在都会被调用
 
+## Python中的反射
 
+* 反射的概念
+
+> 通过字符串的形式在运行时动态修改程序的变量、方法及属性的操作，对于反射操作中所有的修改都会在内存中进行，所以它并不会实际修改代码，主要的目的就是提供程序在运行时的灵活性。
+
+> hasattr:输入一个字符串，判断对象中是否有这个方法或属性
+> getattr:获取对象属性值或者方法的引用，如果时方法，返回方法的引用，如果时属性，则返回属性的值。如果该属性或方法不存在，则会抛出异常
+> setattr：动态添加一个方法或属性
+> delattr：动态删除一个方法或属性
+> 
+> eval(expression,globas=None,locals=None): expressions是一个字符串表达式，将计算后的结果进行返回,将普通的字符串转成python可执行的代码
+> exec(obj[,globals[,locals]]):obj 是一个代码块或代码对象，没有返回值,将普通的字符串转成python可执行的代码
 
