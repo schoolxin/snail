@@ -673,3 +673,7 @@
 > eval(expression,globas=None,locals=None): expressions是一个字符串表达式，将计算后的结果进行返回,将普通的字符串转成python可执行的代码
 > exec(obj[,globals[,locals]]):obj 是一个代码块或代码对象，没有返回值,将普通的字符串转成python可执行的代码
 
+# 项目
+
+* 127.0.0.1 本机，0.0.0.0 监听任意IP的链接请求
+
