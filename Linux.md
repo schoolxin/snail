@@ -357,7 +357,32 @@ $ 用于获取变量的值，如需要调用变量name的值时，可以使用$n
 * 字符串的判断
 
 > -z 字符串 判断字符串是否为空(为空返回真)
-> -n 字符串 判断字符串是否为非空(非空为真)
+> -n 字符串 判断字符串是否为非空(非空为真) 在脚本中判断变量非空是一定要加上""双引号
+
+```
+#!/bin/bash
+flag=1
+sum=0
+for i in $@
+do
+  # echo $i
+  result=$(echo $i | sed 's/[0-9]//g')
+  echo "$i:$result"
+  # 如果是纯数字那么result就是一个空串 
+  if [ -n "$result" ];then
+     flag=0
+  else
+     sum=$(($sum+$i))
+  fi
+done
+if [ $flag -eq  0 ];then
+   echo "参数必须都是整数"
+else
+  echo "成功总和为${sum}"
+fi
+
+```
+
 > -eq 用于数字比较 == 用于两个字符串比较
 
 ```
