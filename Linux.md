@@ -431,10 +431,70 @@ fi
 判断一个变量的值是否为纯数字
 test=$(echo $aa | sed 's/[0-9]//g') 如果是纯数字则替换完之后就是一个空串
 ```
+
 计算器
 
 ![image.png](./assets/1691507355312-image.png)
 
+* case 语句
 
+```
+case $变量名  in
+  "值1") 
+   语句
+   ;;
+  "值2")
+   语句
+   ;;
+esac
+```
 
+* for循环
+
+> 语法1：
+
+```
+for 变量 in 值1 值2 值3
+do
+    语句
+done
+```
+
+> 语法2
+
+```
+for ((表达式1;表达式2;表达式3))
+do
+   语句
+done
+for ((i=1;i<=100;i++))
+do
+  echo i
+done
+command > /dev/null 2>&1 和 command &> /dev/null 
+
+--- 添加用户
+#!/bin/bash
+read -p "请输入用户名:" -t 30 name
+read -p "请输入密码:" -t 30 pass
+read -p "请输入要添加的用户数:" -t 30 num
+
+if [ -z "$name" -o -z "$pass" -o -z "$num" ];then
+   echo "3项数据都不能为空"
+   exit 11
+fi
+
+test_num=$(echo $num|sed 's/[0-9]//g')
+
+if [ -n "$test_num" ];then
+   echo "用户数必须是纯数字"
+   exit 10
+fi
+
+for((i=1;i<=num;i++))
+do
+  useradd $name$i > /dev/null 2>&1
+  echo $pass | passwd $name$i --stdin   > /dev/null 2>&1
+done
+```
 
