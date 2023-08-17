@@ -1,9 +1,0 @@
-{
-    "editor.fontSize": 15,
-    "files.autoSave": "afterDelay",
-    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
-    "files.exclude": {
-        "!.vscode/settings.json": true,
-        "**/settings.json": true
-    }
-}
