@@ -3,6 +3,6 @@
     "files.autoSave": "afterDelay",
     "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
     "files.exclude": {
-        "**/settings.json": true
+        "!.vscode/settings.json": true
     }
 }
