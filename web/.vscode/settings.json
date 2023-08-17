@@ -1,5 +1,8 @@
 {
     "editor.fontSize": 14,
     "files.autoSave": "afterDelay",
-    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",""
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    "files.exclude": {
+        "**/settings.json": true
+    }
 }
