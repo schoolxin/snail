@@ -678,3 +678,50 @@
 
 * 127.0.0.1 本机，0.0.0.0 监听任意IP的链接请求
 
+# 爬虫
+
+## session 对象
+
+* 用于保持会话一般用在爬取需要登陆的页面
+
+```
+sess = requests.Session()
+sess.get("http://httpbin.org/cookies/set?sessioncookiess=12234")
+r = sess.get("http://httpbin.org/cookies")
+```
+
+## 设置访问代理
+
+* 很多网站会对长时间访问网站的请求进行限制，这也是反爬的手段之一，我们可以通过设置代理IP的方式来规避这种反爬手段
+
+```
+proxies = {
+    'https': "121.8.215.106:9797"
+}
+r = requests.get("https://httpbin.org/ip",proxies=proxies)
+```
+
+## xpath
+
+* 1.绝对路径：
+* 2.相对路径：
+* xpath 分析步骤：
+* step1：确定一个需要抓取的元素最近的唯一父节点；
+* step2：从父节点往下定位直到目标元素为止；
+* step3：在chrome里面调试后利用xml库来抓取元素
+
+## BeautifulSoup
+
+* BeautifulSoup库主要支持css-selector选择器
+* 标准的选择器
+
+> find_all(name,attrs,recursive,text,**args) 可根据标签名  属性 内容查找文档
+> 
+> > name:根据标签名进行查找：print(soup.find_all('p'))
+
+> > attrs:根据属性查找：print(soup.find_all(attrs={'id':'div1'}))
+
+* CSS选择器：通过select()直接传入css选择器即可完成选择
+  ![image.png](assets/css选择器.png)
+
+
