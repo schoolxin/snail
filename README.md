@@ -726,5 +726,8 @@ r = requests.get("https://httpbin.org/ip",proxies=proxies)
 
 ## 正则表达式
 
-*  
+* 绝招：.*?
+* result3 = re.findall('"BONDCODE":"(\d+)"',content2) 使用() 进行分组 然后提取出目标子字符串
+
+
 
