@@ -729,5 +729,9 @@ r = requests.get("https://httpbin.org/ip",proxies=proxies)
 * 绝招：.*?
 * result3 = re.findall('"BONDCODE":"(\d+)"',content2) 使用() 进行分组 然后提取出目标子字符串
 
+## 常见反爬手段之身份验证
 
+* 使用cookie信息获取数据
+  > 1.复制已经登陆成的cookie信息
+  > 2.硬登陆：1) requests登陆，发送post请求，需要分析登陆时各个请求参数 过程比较繁琐，较难实现 2)selenium登陆：完全模拟普通用户网页操作，简单方便，劣势： 由于selenium需要对网站数据进行解析渲染，所以速度比较慢
 

@@ -11,7 +11,10 @@ from lxml import etree
 from bs4 import BeautifulSoup
 import re
 import csv
-content_list=[]
+
+content_list = []
+
+
 # 详情页面
 def parse_note_page_detail(url):
     resp = requests.get(url)
@@ -40,8 +43,7 @@ def parse_note_page_detail(url):
     images = re.findall('<img src="(https://woniuxyopenfile.oss-cn-beijing.aliyuncs.com/woniuxynote/image/.*?)".*?>',
                         resp.text, re.S)
     # print(images, type(images))
-    content_list.append([url,title,author,category,date,read_cnts,consumption_points,images])
-
+    content_list.append([url, title, author, category, date, read_cnts, consumption_points, images])
 
 
 print("列表页解析")
@@ -64,9 +66,9 @@ if __name__ == "__main__":
         for page in parse_note_list(i):
             parse_note_page_detail(page)
     # print(content_list)
-    with open('woniunote.csv','w',newline='',encoding='utf-8') as file:
-        writer = csv.writer(file,dialect='excel')
-        writer.writerow(['文章地址','标题','作者','类型','日期','阅读数','消耗积分','图片链接'])
+    with open('woniunote.csv', 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file, dialect='excel')
+        writer.writerow(['文章地址', '标题', '作者', '类型', '日期', '阅读数', '消耗积分', '图片链接'])
         for p in content_list:
             writer.writerow(p)
     print("处理完成")
