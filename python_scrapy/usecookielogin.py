@@ -15,7 +15,7 @@ from faker import Faker
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36",
-    "Content-Type":"application/json"
+    "Content-Type": "application/json"
 }
 #
 #
@@ -43,9 +43,9 @@ headers = {
 
 
 print("github")
-resp = requests.get("https://github.com/login",headers=headers)
+resp = requests.get("https://github.com/login", headers=headers)
 
-soup = BeautifulSoup(resp.text,'lxml')
+soup = BeautifulSoup(resp.text, 'lxml')
 
 authenticity_token = soup.select_one('input[name="authenticity_token"]').get('value')
 
