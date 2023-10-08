@@ -40,15 +40,17 @@ def get_checkcode():
         "Content-Type": "application/x-www-form-urlencoded"
     }
     data = {
-        'image': base64.b64encode(get_pic(r"F:\study\python\snail\python_scrapy\images\F2S9.jpg")),
+        'image': base64.b64encode(get_pic(r".\images\F2S9.jpg")),
         'probability': 'true'
     }
 
     params = {
-        'access_token':get_token()
+        'access_token': get_token()
     }
-    resp = requests.post('https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic',params=params,headers=headers,data=data)
+    resp = requests.post('https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic', params=params, headers=headers,
+                         data=data)
     print(resp.text)
+    print(resp.content)  # Byte
     print(resp.json().get('words_result')[0].get('words'))
 
 
