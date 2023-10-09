@@ -16,6 +16,7 @@ yield
         上一次返回的yield关键处开始执行后面的语句；这意味着程序的控制权的转移是临时和自愿的，我们的函数将来还是要回收控制权， return 意味着彻底交出控制权并运行结束，下一次调用固定从函数第一行开始执行
         有一个内建send 方法，可以使用这个方法给yield语句传递参数，并且send()方法跟next()方法比较类似，都是让函数体向下继续运行，直到遇到一个yield语句挂起
         send(msg) 方法会给生成器发送变量msg 并作为yield表达式的返回值赋值给其前面的变量
+        yield 后面的内容和前面的赋值其实没有任何关系，前面的赋值是在yield完成后由外面的send()方法决定，如果外部没有调用send方法，而是next方法，则前面的赋值为None
 '''
 from itertools import count
 
@@ -24,6 +25,8 @@ for i in range(1):
     print(next(counter))
 
 a = [1, 2, 3, 4, 6]
+
+
 # print(len(a))
 
 
@@ -40,21 +43,37 @@ def h():
 # next(c)
 
 
-def gen():
-    value = 0
-    while True:
-        receive = yield value
-        if receive == 'e':
-            break
-        value = 'got:%s' % receive
-
-g = gen()
-# send 之前需要先激活生成器
-print(g.send(None)) # 激活
-
-print(g.send("hello"))
+# def gen():
+#     value = 0
+#     while True:
+#         receive = yield value
+#         if receive == 'e':
+#             break
+#         value = 'got:%s' % receive
+#
+# g = gen()
+# # send 之前需要先激活生成器 send(None) 或者调用next
+# print(g.send(None)) # 激活
+#
+# print(g.send("hello"))
+# print(g.send("e"))
 # print(next(g))
 # print(next(g))
 # print(next(g))
 
 
+def countdown(n):
+    print("Counting down from", n)
+    while n >= 0:
+        newvalue = (yield n)
+        if newvalue is not None:
+            n = newvalue
+        else:
+            n = n - 1
+
+
+c = countdown(10)
+for x in c:
+    print(x)
+    if x == 10:
+        c.send(3)
