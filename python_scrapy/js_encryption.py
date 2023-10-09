@@ -1,4 +1,4 @@
-import requests, re,jsbeautifier,js2py
+
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
@@ -25,7 +25,7 @@ sess = requests.Session()
 driver = webdriver.Chrome()
 driver.get("http://www.pbc.gov.cn/rmyh/105208/8532/index1.html")
 cookies = driver.get_cookies()
-# print(cookies)
+print(cookies)
 driver.close()
 
 for cookie in cookies:
