@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# @FileName: Coroutine.py
+# @FileName: Ip_proxypool_Coroutine.py
 # @Time:2023/10/9 22:49
 # @Author    :dengzz
 '''
@@ -11,6 +11,10 @@ yield 实现协程，完成生产者和消费者模型
 2.不需要多线程的锁机制，因为只有一个线程，也不存在同时写变量的冲突，在协程中控制共享资源不需要加锁，只需要状态就可以
 3.方便切换控制流，简化编程模型
 4.高并发+高扩展性+低成本
+缺点：
+无法利用多核资源，协程本质是一个单线程，协程一般要配合进程才能运行在多个cpu上，要充分利用资源，最好是使用多进程+协程
+python3.4之后  asyncio.coroutine 和 yield from 后面必须跟iterable对象(可以是生成器也可以是迭代器)
+python3.5之后，async/await 关键字  替换原则 将asyncio.coroutine 替换成async   yield from 替换成await
 '''
 
 
