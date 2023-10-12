@@ -10,21 +10,21 @@ class LoginspiderSpider(scrapy.Spider):
     allowed_domains = ["www.woniuxy.com"]
     start_urls = ["https://www.woniuxy.com"]
 
-    def after_login(self, response):
 
-        self.logger.debug(response.text)
 
     def getCaptcha(self, response):
+
         with open('checkcode.png', 'wb') as file:
             file.write(response.body)
-        code = input("请输入验证码")
+        code = str(input("请输入验证码"))
         data = {
             'tel': response.meta['tel'],
             'password': response.meta['password'],
             'captcha': code,
-            'loginType': response.meta['loginType']
+            'loginType': str(response.meta['loginType'])
         }
-        return [scrapy.FormRequest(url='https://woniuxy.com/sys/user/login', formdata=data,callback=self.after_login)]  # post 请求
+        # print(data)
+        return [scrapy.FormRequest(url='https://woniuxy.com/sys/user/login',formdata=data,callback=self.after_login,dont_filter=True)]  # post 请求
 
     def start_requests(self):
         return [scrapy.Request(
@@ -33,4 +33,7 @@ class LoginspiderSpider(scrapy.Spider):
             callback=self.getCaptcha
         )]
 
+    def after_login(self, response):
+        print("hhhh")
+        self.logger.debug(response.text)
 
