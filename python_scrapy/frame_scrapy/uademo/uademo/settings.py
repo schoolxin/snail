@@ -1,4 +1,4 @@
-# Scrapy settings for piplinedemo project
+# Scrapy settings for uademo project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "piplinedemo"
+BOT_NAME = "uademo"
 
-SPIDER_MODULES = ["piplinedemo.spiders"]
-NEWSPIDER_MODULE = "piplinedemo.spiders"
+SPIDER_MODULES = ["uademo.spiders"]
+NEWSPIDER_MODULE = "uademo.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "piplinedemo (+http://www.yourdomain.com)"
+#USER_AGENT = "uademo (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,14 +45,14 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "piplinedemo.middlewares.PiplinedemoSpiderMiddleware": 543,
+#    "uademo.middlewares.UademoSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    "piplinedemo.middlewares.PiplinedemoDownloaderMiddleware": 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   "uademo.middlewares.RandomUserAgent": 100,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -62,10 +62,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   "piplinedemo.pipelines.titlePipeline": 100,
-   "piplinedemo.pipelines.SqlPipeline": 200,
-}
+#ITEM_PIPELINES = {
+#    "uademo.pipelines.UademoPipeline": 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -92,7 +91,3 @@ ITEM_PIPELINES = {
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
-DB_USER = "root"
-DB_PASSWD = "000000"
-DB_NAME = "gmall"
-DB_HOST = "192.168.179.102"

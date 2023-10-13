@@ -41,6 +41,8 @@ class WoniunoteSpider(scrapy.Spider):
 
         items['date'] = response.xpath("//p[@class='date-year']/text()").extract()[0].strip() + "/" + \
                         response.xpath("//p[@class='date-time']/text()").extract()[0].strip()
-        print(items)
-        # items['read'] = re.findall("阅读：(.*?)\s+", response.text, re.S)[0]
-        # return items
+
+        items['read'] = 0
+
+
+        return items
