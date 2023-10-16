@@ -753,5 +753,23 @@ r = requests.get("https://httpbin.org/ip",proxies=proxies)
 
 ### Series
 
-* 
+* 条件过滤:
+
+```
+t = pd.Series(arr)
+arr = np.array([33, 44, 55, 77, 22])
+print(t>30)
+print(t[t>30])
+```
+
+* 加减乘除log针对元素中所有数据
+
+### DataFrame
+
+* 表示的是一种二维数据的数据结构，像表格一行，包含行和列的数据
+* 创建一个DataFrame
+
+
+
+
 
