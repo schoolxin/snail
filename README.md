@@ -769,7 +769,18 @@ print(t[t>30])
 * 表示的是一种二维数据的数据结构，像表格一行，包含行和列的数据
 * 创建一个DataFrame
 
+```
+df1 = pandas.DataFrame([['Frank', 'M', 29], ['Marry', 'F', 29], ['Jerry', 'M', 14]])
+print(df1)
+df1.columns = ['Name', 'Sex', 'Age']
+print(df1)
 
+print("添加列标签")
+df2 = pandas.DataFrame([['Frank', 'M', 29], ['Marry', 'F', 29], ['Jerry', 'M', 14]], columns=['Names', 'Sex', 'Age'])
+print(df2)
+```
 
+### 缺失值的处理
 
+* 数据中有特有或一定范围内的值是不完全的，缺失值可能来自于机械的缺失，也可以是人为缺失，比如比较敏感的数据造成认为缺失。
 
