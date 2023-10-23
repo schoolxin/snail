@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'booksmanager.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '192.168.179.102',  # 数据库主机
+        'HOST': 'hadoop102',  # 数据库主机
         'PORT': 3306,  # 数据库端口
         'USER': 'root',  # 数据库用户名
         'PASSWORD': '000000',  # 数据库用户密码
