@@ -13,5 +13,15 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="book" uuid="10fa0cb8-42c4-4ff0-9c1d-b32dec0b8498">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://192.168.179.102:3306/book</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="enabledTLSProtocols" value="TLSv1.2" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>

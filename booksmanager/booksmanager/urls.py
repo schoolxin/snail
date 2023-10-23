@@ -1,4 +1,4 @@
-"""bookmanager URL Configuration
+"""booksmanager URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -13,14 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 第一个参数是一个正则表达式，第二参数是视图函数或者是一个列表元组
-
-    # 这个是多级url配置的方法  path 可以换成url
-    path('', include('book.urls')),
+    url(r'^', include('book.urls'))
 ]
