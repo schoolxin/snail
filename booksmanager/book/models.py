@@ -5,6 +5,7 @@ from django.db import models
 
 # 模型类对应的表名：默认是：应用名_模型小写   book_bookinfo 也可以自己定义在数据库中的表名称
 class BookInfo(models.Model):
+    objects = models.Manager()
     name = models.CharField(max_length=20, verbose_name="书籍名称")  # verbose_name 站点管理显示的名称
     pub_date = models.DateField(null=False, verbose_name="发布日期")  # null 字段是否可以为空
     readcount = models.IntegerField(default=0, verbose_name="阅读总数")
@@ -20,6 +21,7 @@ class BookInfo(models.Model):
 
 
 class PeopleInfo(models.Model):
+    objects = models.Manager()
     GENDER_CHOICES = (
         (0, "male"),
         (1, "female")
