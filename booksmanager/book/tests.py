@@ -2,8 +2,13 @@ from django.test import TestCase
 
 # Create your tests here.
 import os.path
-from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
+class PeopleInfo():
+    name = "111"
+    age = "dddd"
+    def showInfo(self):
+        print(self.name)
+
+
+p = PeopleInfo()
+print(p.showInfo())
