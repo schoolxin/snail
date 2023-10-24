@@ -1,0 +1,1125 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.模型定义和迁移 · Django基础</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="赵勇文">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-zealar/test.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fancybox/jquery.fancybox.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fancybox/jquery.fancybox-buttons.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5.站点管理.html" />
+    
+    
+    <link rel="prev" href="3.创建Django项目和应用.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="0.Django开发流程.html">
+            
+                <a href="0.Django开发流程.html">
+            
+                    
+                    一、Django开发流程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.Django简介.html">
+            
+                <a href="1.Django简介.html">
+            
+                    
+                    1.Django简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="2.搭建虚拟开发环境.html">
+            
+                <a href="2.搭建虚拟开发环境.html">
+            
+                    
+                    2.搭建虚拟开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="3.创建Django项目和应用.html">
+            
+                <a href="3.创建Django项目和应用.html">
+            
+                    
+                    3.创建Django项目和应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="4.模型定义和迁移.html">
+            
+                <a href="4.模型定义和迁移.html">
+            
+                    
+                    4.模型定义和迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="5.站点管理.html">
+            
+                <a href="5.站点管理.html">
+            
+                    
+                    5.站点管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="6.视图定义和URL配置.html">
+            
+                <a href="6.视图定义和URL配置.html">
+            
+                    
+                    6.视图定义和URL配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="7.模板.html">
+            
+                <a href="7.模板.html">
+            
+                    
+                    7.模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="8.案例.html">
+            
+                <a href="8.案例.html">
+            
+                    
+                    8.案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="9.配置文件和静态文件.html">
+            
+                <a href="9.配置文件和静态文件.html">
+            
+                    
+                    9.配置文件和静态文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../2模型/0.模型.html">
+            
+                <a href="../2模型/0.模型.html">
+            
+                    
+                    二、模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../2模型/1.项目准备.html">
+            
+                <a href="../2模型/1.项目准备.html">
+            
+                    
+                    1.项目准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../2模型/2.配置MySQL数据库.html">
+            
+                <a href="../2模型/2.配置MySQL数据库.html">
+            
+                    
+                    2.配置MySQL数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../2模型/3.定义模型类.html">
+            
+                <a href="../2模型/3.定义模型类.html">
+            
+                    
+                    3.定义模型类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../2模型/4.Django的shell工具.html">
+            
+                <a href="../2模型/4.Django的shell工具.html">
+            
+                    
+                    4.Django的shell工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../2模型/5.数据库操作-增删改.html">
+            
+                <a href="../2模型/5.数据库操作-增删改.html">
+            
+                    
+                    5.数据库操作-增删改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../2模型/6.查询操作.html">
+            
+                <a href="../2模型/6.查询操作.html">
+            
+                    
+                    6.查询操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../2模型/6.查询操作/6.1.基础条件查询.html">
+            
+                <a href="../2模型/6.查询操作/6.1.基础条件查询.html">
+            
+                    
+                    6.1.基础条件查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../2模型/6.查询操作/6.2.F和Q对象.html">
+            
+                <a href="../2模型/6.查询操作/6.2.F和Q对象.html">
+            
+                    
+                    6.2.F和Q对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.3" data-path="../2模型/6.查询操作/6.3.聚合函数和排序函数.html">
+            
+                <a href="../2模型/6.查询操作/6.3.聚合函数和排序函数.html">
+            
+                    
+                    6.3.聚合函数和排序函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.4" data-path="../2模型/6.查询操作/6.4.关联查询.html">
+            
+                <a href="../2模型/6.查询操作/6.4.关联查询.html">
+            
+                    
+                    6.4.关联查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.5" data-path="../2模型/6.查询操作/6.5.查询集QuerySet.html">
+            
+                <a href="../2模型/6.查询操作/6.5.查询集QuerySet.html">
+            
+                    
+                    6.5.查询集QuerySet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../3视图/0.视图.html">
+            
+                <a href="../3视图/0.视图.html">
+            
+                    
+                    三、视图
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../3视图/1.视图介绍和项目准备.html">
+            
+                <a href="../3视图/1.视图介绍和项目准备.html">
+            
+                    
+                    1.视图介绍和项目准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../3视图/2.配置URLconf.html">
+            
+                <a href="../3视图/2.配置URLconf.html">
+            
+                    
+                    2.配置URLconf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3视图/3.路由命名与反向解析.html">
+            
+                <a href="../3视图/3.路由命名与反向解析.html">
+            
+                    
+                    3.路由命名与反向解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../3视图/4.使用 PostMan 测试视图.html">
+            
+                <a href="../3视图/4.使用 PostMan 测试视图.html">
+            
+                    
+                    4.使用 PostMan 测试视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../3视图/5.HttpRequest对象.html">
+            
+                <a href="../3视图/5.HttpRequest对象.html">
+            
+                    
+                    5.HttpRequest对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../3视图/6.HttpResponse对象.html">
+            
+                <a href="../3视图/6.HttpResponse对象.html">
+            
+                    
+                    6.HttpResponse对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../3视图/7.状态保持.html">
+            
+                <a href="../3视图/7.状态保持.html">
+            
+                    
+                    7.状态保持
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../3视图/7.状态保持/7.1.Cookie.html">
+            
+                <a href="../3视图/7.状态保持/7.1.Cookie.html">
+            
+                    
+                    7.1.Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../3视图/7.状态保持/7.2.Session.html">
+            
+                <a href="../3视图/7.状态保持/7.2.Session.html">
+            
+                    
+                    7.2.Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../3视图/8.类视图与中间件.html">
+            
+                <a href="../3视图/8.类视图与中间件.html">
+            
+                    
+                    8.类视图与中间件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../3视图/8.类视图与中间件/8.1.类视图.html">
+            
+                <a href="../3视图/8.类视图与中间件/8.1.类视图.html">
+            
+                    
+                    8.1.类视图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../3视图/8.类视图与中间件/8.2.中间件.html">
+            
+                <a href="../3视图/8.类视图与中间件/8.2.中间件.html">
+            
+                    
+                    8.2.中间件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../4模板/0.模板.html">
+            
+                <a href="../4模板/0.模板.html">
+            
+                    
+                    四、模板
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../4模板/1.Django使用自带模板.html">
+            
+                <a href="../4模板/1.Django使用自带模板.html">
+            
+                    
+                    1.Django使用自带模板
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../4模板/1.Django使用自带模板/1.1.模板的使用步骤.html">
+            
+                <a href="../4模板/1.Django使用自带模板/1.1.模板的使用步骤.html">
+            
+                    
+                    1.1.模板的使用步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../4模板/1.Django使用自带模板/1.2.模板语法.html">
+            
+                <a href="../4模板/1.Django使用自带模板/1.2.模板语法.html">
+            
+                    
+                    1.2.模板语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../4模板/1.Django使用自带模板/1.3.过滤器.html">
+            
+                <a href="../4模板/1.Django使用自带模板/1.3.过滤器.html">
+            
+                    
+                    1.3.过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../4模板/1.Django使用自带模板/1.4.模板继承.html">
+            
+                <a href="../4模板/1.Django使用自带模板/1.4.模板继承.html">
+            
+                    
+                    1.4.模板继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../4模板/2.Django使用jinja2模板.html">
+            
+                <a href="../4模板/2.Django使用jinja2模板.html">
+            
+                    
+                    2.Django使用jinja2模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../4模板/3.CSRF.html">
+            
+                <a href="../4模板/3.CSRF.html">
+            
+                    
+                    3.CSRF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.模型定义和迁移</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x548C;&#x8FC1;&#x79FB;">&#x6A21;&#x578B;&#x5B9A;&#x4E49;&#x548C;&#x8FC1;&#x79FB;</h1>
+<p><strong>&#x5B66;&#x4E60;&#x76EE;&#x6807;</strong></p>
+<ul>
+<li>&#x6839;&#x636E;&#x6570;&#x636E;&#x5E93;&#x6570;&#x636E;&#x5173;&#x7CFB;&#x5B9A;&#x4E49;&#x6A21;&#x578B;&#x7C7B;</li>
+<li>&#x719F;&#x7EC3;&#x4F7F;&#x7528;&#x6A21;&#x578B;&#x8FC1;&#x79FB;&#x547D;&#x4EE4;</li>
+<li>&#x7406;&#x89E3;&#x6A21;&#x578B;&#x8FC1;&#x79FB;&#x7684;&#x8FC7;&#x7A0B;</li>
+</ul>
+<h2 id="&#x4E00;&#x3001;&#x5206;&#x6790;&#x548C;&#x8BBE;&#x8BA1;&#x4E66;&#x7C4D;&#x4FE1;&#x606F;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6570;&#x636E;&#x5E93;&#x8868;">&#x4E00;&#x3001;&#x5206;&#x6790;&#x548C;&#x8BBE;&#x8BA1;&#x4E66;&#x7C4D;&#x4FE1;&#x606F;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6570;&#x636E;&#x5E93;&#x8868;</h2>
+<p>&#x6A21;&#x578B;&#xFF0C;&#x4E13;&#x95E8;&#x7528;&#x6765;&#x7BA1;&#x7406;&#x548C;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x7684;&#x7C7B;&#xFF0C;&#x548C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#xFF0C;&#x6A21;&#x578B;&#x7C7B;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x4E2A;&#x4F5C;&#x7528;&#xFF1A;</p>
+<ol>
+<li>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x548C;&#x8868;&#x7684;&#x5B57;&#x6BB5;</li>
+<li>&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;</li>
+</ol>
+<h3 id="11-&#x5206;&#x6790;&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;">1.1 &#x5206;&#x6790;&#x9879;&#x76EE;&#x4E2D;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;</h3>
+<p>&#x6B64;&#x5904;&#x4E66;&#x7C4D;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6709; 2 &#x79CD;&#x6570;&#x636E;&#x9700;&#x8981;&#x7BA1;&#x7406;&#xFF0C;&#x4E66;&#x7C4D;&#x3001;&#x4E66;&#x7C4D;&#x4E2D;&#x7684;&#x4EBA;&#x7269;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x5173;&#x7CFB;&#x662F;&#x4E00;&#x5BF9;&#x591A;&#x7684;&#x5173;&#x7CFB;&#xFF0C; &#x4E00;&#x672C;&#x4E66;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x4EBA;&#x7269;</p>
+<figure id="fig1.2.4.1">     <a href="4.&#x6A21;&#x578B;/image-20191220135340612.png" rel="grouped" title="&#x4E66;&#x7C4D;&#x548C;&#x4EBA;&#x7269;" target="_self" class="fancybox">
+       <img src="4.&#x6A21;&#x578B;/image-20191220135340612.png" alt="&#x4E66;&#x7C4D;&#x548C;&#x4EBA;&#x7269;">
+     </a><figcaption>Image - &#x4E66;&#x7C4D;&#x548C;&#x4EBA;&#x7269;</figcaption></figure>
+<h3 id="12-&#x8BBE;&#x8BA1;&#x6570;&#x636E;&#x5E93;&#x8868;">1.2 &#x8BBE;&#x8BA1;&#x6570;&#x636E;&#x5E93;&#x8868;</h3>
+<ul>
+<li>&#x4E66;&#x7C4D;&#x4FE1;&#x606F;&#x8868;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x5B57;&#x6BB5;&#x7C7B;&#x578B;</th>
+<th>&#x5B57;&#x6BB5;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>&#x4E3B;&#x952E;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>CharField</td>
+<td>&#x4E66;&#x540D;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&#x897F;&#x6E38;&#x8BB0;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&#x4E09;&#x56FD;&#x6F14;&#x4E49;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x4EBA;&#x7269;&#x4FE1;&#x606F;&#x8868;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x5B57;&#x6BB5;&#x7C7B;&#x578B;</th>
+<th>&#x5B57;&#x6BB5;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>AutoField</td>
+<td>&#x4E3B;&#x952E;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>CharField</td>
+<td>&#x4EBA;&#x540D;</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>BooleanField</td>
+<td>&#x6027;&#x522B;</td>
+</tr>
+<tr>
+<td>book</td>
+<td>ForeignKey</td>
+<td>&#x5916;&#x952E;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>gender</th>
+<th>book</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&#x5B59;&#x609F;&#x7A7A;</td>
+<td>False</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&#x767D;&#x9AA8;&#x7CBE;</td>
+<td>True</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&#x66F9;&#x64CD;</td>
+<td>False</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&#x8C82;&#x8749;</td>
+<td>True</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4E8C;&#x3001;&#x4F7F;&#x7528;-django-&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5E93;&#x5F00;&#x53D1;">&#x4E8C;&#x3001;&#x4F7F;&#x7528; Django &#x8FDB;&#x884C;&#x6570;&#x636E;&#x5E93;&#x5F00;&#x53D1;</h2>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x6A21;&#x578B;&#x7C7B;</li>
+<li>&#x6A21;&#x578B;&#x8FC1;&#x79FB;</li>
+<li>&#x4F7F;&#x7528;&#x6A21;&#x578B;&#x7C7B;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x8868;&#x6570;&#x636E;</li>
+</ul>
+<h3 id="21-&#x5B9A;&#x4E49;&#x6A21;&#x578B;&#x7C7B;">2.1 &#x5B9A;&#x4E49;&#x6A21;&#x578B;&#x7C7B;</h3>
+<p>MVT &#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E2D;&#x7684; Model, &#x4E13;&#x95E8;&#x8D1F;&#x8D23;&#x548C;&#x6570;&#x636E;&#x5E93;&#x4EA4;&#x4E92;&#xFF0C;&#x5BF9;&#x5E94;(models.py)&#xFF0C;&#x5728; models.py &#x4E2D;&#x5B9A;&#x4E49;&#x6A21;&#x578B;&#x7C7B;&#x7EE7;&#x627F; django.db.models.Model&#xFF0C;Model &#x7C7B;&#x4E2D;&#x5185;&#x5D4C;&#x4E86; ORM &#x6846;&#x67B6;&#xFF0C;&#x901A;&#x8FC7;&#x6A21;&#x578B;&#x7C7B;&#x548C;&#x5BF9;&#x8C61;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x5E93;&#x8868;&#x7684;&#x589E;&#x5220;&#x6539;&#x67E5;&#xFF0C; &#x4E0D;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x9762;&#x5411;&#x6570;&#x636E;&#x5E93;&#x7F16;&#x7A0B;&#x3002;</p>
+<h4 id="&#x4EC0;&#x4E48;&#x662F;-orm">&#x4EC0;&#x4E48;&#x662F; ORM</h4>
+<p>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#x628A;&#x6240;&#x6709;&#x5B9E;&#x4F53;&#x770B;&#x6210;&#x5BF9;&#x8C61;&#xFF08;object&#xFF09;&#xFF0C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x5219;&#x662F;&#x91C7;&#x7528;&#x5B9E;&#x4F53;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF08;relation&#xFF09;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x3002;&#x6709;&#x4EBA;&#x63D0;&#x51FA;&#xFF0C;&#x5173;&#x7CFB;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x5BF9;&#x8C61;&#x8868;&#x8FBE;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x5C31;&#x80FD;&#x4F7F;&#x7528;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7F16;&#x7A0B;&#xFF0C;&#x6765;&#x64CD;&#x4F5C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x3002;ORM &#x5C31;&#x662F;&#x901A;&#x8FC7;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x8BED;&#x6CD5;&#xFF0C;&#x64CD;&#x4F5C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x662F;&quot;&#x5BF9;&#x8C61;-&#x5173;&#x7CFB;&#x6620;&#x5C04;&quot;&#xFF08;Object/Relational Mapping&#xFF09; &#x7684;&#x7F29;&#x5199;&#x3002;</p>
+<figure id="fig1.2.4.2">     <a href="4.&#x6A21;&#x578B;/orm.png" rel="grouped" title="orm" target="_self" class="fancybox">
+       <img src="4.&#x6A21;&#x578B;/orm.png" alt="orm">
+     </a><figcaption>Image - orm</figcaption></figure>
+<ul>
+<li>&#x6570;&#x636E;&#x5E93;&#x7684;&#x8868;&#xFF08;table&#xFF09; --&gt; &#x7C7B;&#xFF08;class&#xFF09;</li>
+<li>&#x884C;&#x6570;&#x636E;&#xFF08;record&#xFF09;--&gt; &#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF08;object&#xFF09;</li>
+<li>&#x5B57;&#x6BB5;&#xFF08;field&#xFF09;--&gt; &#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF08;attribute&#xFF09;</li>
+</ul>
+<h4 id="&#x4E3A;&#x4E66;&#x7C4D;&#x8868;&#x8BBE;&#x8BA1;&#x6A21;&#x578B;&#x7C7B;">&#x4E3A;&#x4E66;&#x7C4D;&#x8868;&#x8BBE;&#x8BA1;&#x6A21;&#x578B;&#x7C7B;</h4>
+<ul>
+<li>&#x6A21;&#x578B;&#x7C7B;&#xFF1A;BookInfo</li>
+<li>&#x4E66;&#x7C4D;&#x540D;&#x79F0;&#x5B57;&#x6BB5;&#xFF1A;name</li>
+</ul>
+<h4 id="&#x4E3A;&#x4EBA;&#x7269;&#x8868;&#x8BBE;&#x8BA1;&#x6A21;&#x578B;&#x7C7B;">&#x4E3A;&#x4EBA;&#x7269;&#x8868;&#x8BBE;&#x8BA1;&#x6A21;&#x578B;&#x7C7B;</h4>
+<ul>
+<li>&#x6A21;&#x578B;&#x7C7B;&#xFF1A;PeopleInfo</li>
+<li>&#x4EBA;&#x7269;&#x59D3;&#x540D;&#x5B57;&#x6BB5;&#xFF1A;name</li>
+<li>&#x4EBA;&#x7269;&#x6027;&#x522B;&#x5B57;&#x6BB5;&#xFF1A;gender</li>
+<li>&#x5916;&#x952E;&#x7EA6;&#x675F;&#xFF1A;book<ul>
+<li>&#x5916;&#x952E;&#x8981;&#x6307;&#x5B9A;&#x6240;&#x5C5E;&#x7684;&#x6A21;&#x578B;&#x7C7B;book = models.ForeignKey(BookInfo)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>[!TIP]</p>
+<p>&#x7EE7;&#x627F; Model &#x7C7B;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x4E3B;&#x952E;&#x5B57;&#x6BB5;&#xFF0C;&#x5728;&#x751F;&#x6210;&#x8868;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#xFF0C;&#x5E76;&#x4E14;&#x503C;&#x4E3A;&#x81EA;&#x589E;&#x957F;&#x3002;</p>
+</blockquote>
+<p>&#x5728;models.py&#x4E2D;&#x5B9A;&#x4E49;&#x6A21;&#x578B;&#x7C7B;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
+
+<span class="hljs-comment"># Create your models here.</span>
+<span class="hljs-comment"># &#x51C6;&#x5907;&#x4E66;&#x7C4D;&#x5217;&#x8868;&#x4FE1;&#x606F;&#x7684;&#x6A21;&#x578B;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookInfo</span><span class="hljs-params">(models.Model)</span>:</span>
+    <span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B57;&#x6BB5;&#xFF0C;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;...</span>
+    name = models.CharField(max_length=<span class="hljs-number">10</span>)
+
+
+<span class="hljs-comment"># &#x51C6;&#x5907;&#x4EBA;&#x7269;&#x5217;&#x8868;&#x4FE1;&#x606F;&#x7684;&#x6A21;&#x578B;&#x7C7B;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PeopleInfo</span><span class="hljs-params">(models.Model)</span>:</span>
+    name = models.CharField(max_length=<span class="hljs-number">10</span>)
+    gender = models.BooleanField()
+    <span class="hljs-comment"># &#x5916;&#x952E;&#x7EA6;&#x675F;&#xFF1A;&#x4EBA;&#x7269;&#x5C5E;&#x4E8E;&#x54EA;&#x672C;&#x4E66;</span>
+    book = models.ForeignKey(BookInfo)
+</code></pre>
+<h3 id="22-&#x6A21;&#x578B;&#x8FC1;&#x79FB;">2.2 &#x6A21;&#x578B;&#x8FC1;&#x79FB;</h3>
+<p>&#x6A21;&#x578B;&#x8FC1;&#x79FB;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x521B;&#x5EFA;&#x6A21;&#x578B;&#x5BF9;&#x5E94;&#x7684;&#x8868;&#x548C;&#x5B57;&#x6BB5;</p>
+<p>&#x8FC1;&#x79FB;&#x5305;&#x542B;&#x4E24;&#x6B65; :</p>
+<p>1.&#x751F;&#x6210;&#x8FC1;&#x79FB;&#x6587;&#x4EF6;&#xFF1A;&#x6839;&#x636E;&#x6A21;&#x578B;&#x7C7B;&#x751F;&#x6210;&#x521B;&#x5EFA;&#x8868;&#x7684;&#x8BED;&#x53E5;</p>
+<pre><code class="lang-bash">python manage.py makemigrations
+&#x6216;&#x8005;
+django-admin makemigrations
+</code></pre>
+<p>2.&#x6267;&#x884C;&#x8FC1;&#x79FB;&#xFF1A;&#x6839;&#x636E;&#x7B2C;&#x4E00;&#x6B65;&#x751F;&#x6210;&#x7684;&#x8BED;&#x53E5;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x521B;&#x5EFA;&#x8868;</p>
+<pre><code class="lang-bash">python manage.py migrate
+&#x6216;&#x8005;
+django-admin migrate
+</code></pre>
+<p>&#x8FC1;&#x79FB;&#x524D;</p>
+<figure id="fig1.2.4.3">     <a href="4.&#x6A21;&#x578B;/image-20191220144813298.png" rel="grouped" title="&#x8FC1;&#x79FB;&#x524D;migrations" target="_self" class="fancybox">
+       <img src="4.&#x6A21;&#x578B;/image-20191220144813298.png" alt="&#x8FC1;&#x79FB;&#x524D;migrations">
+     </a><figcaption>Image - &#x8FC1;&#x79FB;&#x524D;migrations</figcaption></figure>
+<p>&#x8FC1;&#x79FB;&#x540E;</p>
+<figure id="fig1.2.4.4">     <a href="4.&#x6A21;&#x578B;/image-20191220144842981.png" rel="grouped" title="&#x8FC1;&#x79FB;&#x540E;migrations" target="_self" class="fancybox">
+       <img src="4.&#x6A21;&#x578B;/image-20191220144842981.png" alt="&#x8FC1;&#x79FB;&#x540E;migrations">
+     </a><figcaption>Image - &#x8FC1;&#x79FB;&#x540E;migrations</figcaption></figure>
+<p>&#x63D0;&#x793A;&#xFF1A;&#x9ED8;&#x8BA4;&#x91C7;&#x7528;sqlite3&#x6570;&#x636E;&#x5E93;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E; </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; jihuawisdom.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-12-24 14:41:01
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3.创建Django项目和应用.html" class="navigation navigation-prev " aria-label="Previous page: 3.创建Django项目和应用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5.站点管理.html" class="navigation navigation-next " aria-label="Next page: 5.站点管理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.模型定义和迁移","level":"1.2.4","depth":2,"next":{"title":"5.站点管理","level":"1.2.5","depth":2,"path":"1Django开发流程/5.站点管理.md","ref":"1Django开发流程/5.站点管理.md","articles":[]},"previous":{"title":"3.创建Django项目和应用","level":"1.2.3","depth":2,"path":"1Django开发流程/3.创建Django项目和应用.md","ref":"1Django开发流程/3.创建Django项目和应用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","anchor-navigation","zealar","image-captions","fancybox","back-to-top-button","page-toc-button","flexible-alerts","tbfed-pagefooter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy jihuawisdom.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"fancybox":{"helpers":{"buttons":{}}},"zealar":{},"search":{},"anchor-navigation":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"image-captions":{"caption":"Image - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"赵勇文","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"1Django开发流程/0.Django开发流程.html#fig1.2.1","level":"1.2","list_caption":"Figure: 图书列表","alt":"图书列表","nro":1,"url":"0.Django开发流程/image-20191216154308220.png","index":1,"caption_template":"Image - _CAPTION_","label":"图书列表","attributes":{},"skip":false,"key":"1.2.1"},{"backlink":"1Django开发流程/1.Django简介.html#fig1.2.1.1","level":"1.2.1","list_caption":"Figure: taobao首页","alt":"taobao首页","nro":2,"url":"1.Django简介/image-20191218150758301.png","index":1,"caption_template":"Image - _CAPTION_","label":"taobao首页","attributes":{},"skip":false,"key":"1.2.1.1"},{"backlink":"1Django开发流程/1.Django简介.html#fig1.2.1.2","level":"1.2.1","list_caption":"Figure: HTTP服务器工作流程","alt":"HTTP服务器工作流程","nro":3,"url":"1.Django简介/image-20191219121415323.png","index":2,"caption_template":"Image - _CAPTION_","label":"HTTP服务器工作流程","attributes":{},"skip":false,"key":"1.2.1.2"},{"backlink":"1Django开发流程/1.Django简介.html#fig1.2.1.3","level":"1.2.1","list_caption":"Figure: Django的特点","alt":"Django的特点","nro":4,"url":"1.Django简介/image-20191217160031149.png","index":3,"caption_template":"Image - _CAPTION_","label":"Django的特点","attributes":{},"skip":false,"key":"1.2.1.3"},{"backlink":"1Django开发流程/1.Django简介.html#fig1.2.1.4","level":"1.2.1","list_caption":"Figure: MVC 模式","alt":"MVC 模式","nro":5,"url":"1.Django简介/image-20191217154725769.png","index":4,"caption_template":"Image - _CAPTION_","label":"MVC 模式","attributes":{},"skip":false,"key":"1.2.1.4"},{"backlink":"1Django开发流程/1.Django简介.html#fig1.2.1.5","level":"1.2.1","list_caption":"Figure: Django的MVT","alt":"Django的MVT","nro":6,"url":"1.Django简介/image-20191217154816131.png","index":5,"caption_template":"Image - _CAPTION_","label":"Django的MVT","attributes":{},"skip":false,"key":"1.2.1.5"},{"backlink":"1Django开发流程/2.搭建虚拟开发环境.html#fig1.2.2.1","level":"1.2.2","list_caption":"Figure: site-packages","alt":"site-packages","nro":7,"url":"2.搭建虚拟开发环境/image-20191223095932356.png","index":1,"caption_template":"Image - _CAPTION_","label":"site-packages","attributes":{},"skip":false,"key":"1.2.2.1"},{"backlink":"1Django开发流程/2.搭建虚拟开发环境.html#fig1.2.2.2","level":"1.2.2","list_caption":"Figure: 创建虚拟环境","alt":"创建虚拟环境","nro":8,"url":"2.搭建虚拟开发环境/image-20191219175607369.png","index":2,"caption_template":"Image - _CAPTION_","label":"创建虚拟环境","attributes":{},"skip":false,"key":"1.2.2.2"},{"backlink":"1Django开发流程/2.搭建虚拟开发环境.html#fig1.2.2.3","level":"1.2.2","list_caption":"Figure: 查看可以虚拟环境列表","alt":"查看可以虚拟环境列表","nro":9,"url":"2.搭建虚拟开发环境/image-20191219180412503.png","index":3,"caption_template":"Image - _CAPTION_","label":"查看可以虚拟环境列表","attributes":{},"skip":false,"key":"1.2.2.3"},{"backlink":"1Django开发流程/2.搭建虚拟开发环境.html#fig1.2.2.4","level":"1.2.2","list_caption":"Figure: 切换到虚拟环境","alt":"切换到虚拟环境","nro":10,"url":"2.搭建虚拟开发环境/image-20191220095839098.png","index":4,"caption_template":"Image - _CAPTION_","label":"切换到虚拟环境","attributes":{},"skip":false,"key":"1.2.2.4"},{"backlink":"1Django开发流程/2.搭建虚拟开发环境.html#fig1.2.2.5","level":"1.2.2","list_caption":"Figure: 退出虚拟环境","alt":"退出虚拟环境","nro":11,"url":"2.搭建虚拟开发环境/image-20191220095857479.png","index":5,"caption_template":"Image - _CAPTION_","label":"退出虚拟环境","attributes":{},"skip":false,"key":"1.2.2.5"},{"backlink":"1Django开发流程/2.搭建虚拟开发环境.html#fig1.2.2.6","level":"1.2.2","list_caption":"Figure: 删除虚拟环境","alt":"删除虚拟环境","nro":12,"url":"2.搭建虚拟开发环境/image-20191220095913945.png","index":6,"caption_template":"Image - _CAPTION_","label":"删除虚拟环境","attributes":{},"skip":false,"key":"1.2.2.6"},{"backlink":"1Django开发流程/2.搭建虚拟开发环境.html#fig1.2.2.7","level":"1.2.2","list_caption":"Figure: 安装django-1.11.11","alt":"安装django-1.11.11","nro":13,"url":"2.搭建虚拟开发环境/image-20191220101738326.png","index":7,"caption_template":"Image - _CAPTION_","label":"安装django-1.11.11","attributes":{},"skip":false,"key":"1.2.2.7"},{"backlink":"1Django开发流程/2.搭建虚拟开发环境.html#fig1.2.2.8","level":"1.2.2","list_caption":"Figure: 查看虚拟环境中安装的包","alt":"查看虚拟环境中安装的包","nro":14,"url":"2.搭建虚拟开发环境/image-20191220101835502.png","index":8,"caption_template":"Image - _CAPTION_","label":"查看虚拟环境中安装的包","attributes":{},"skip":false,"key":"1.2.2.8"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.1","level":"1.2.3","list_caption":"Figure: 项目目录","alt":"项目目录","nro":15,"url":"3.创建Django项目和应用/image-20191220113643354.png","index":1,"caption_template":"Image - _CAPTION_","label":"项目目录","attributes":{},"skip":false,"key":"1.2.3.1"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.2","level":"1.2.3","list_caption":"Figure: 启动开发服务器","alt":"启动开发服务器","nro":16,"url":"3.创建Django项目和应用/image-20191220114419817.png","index":2,"caption_template":"Image - _CAPTION_","label":"启动开发服务器","attributes":{},"skip":false,"key":"1.2.3.2"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.3","level":"1.2.3","list_caption":"Figure: 服务器默认首页","alt":"服务器默认首页","nro":17,"url":"3.创建Django项目和应用/image-20191220114459833.png","index":3,"caption_template":"Image - _CAPTION_","label":"服务器默认首页","attributes":{},"skip":false,"key":"1.2.3.3"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.4","level":"1.2.3","list_caption":"Figure: 应用目录","alt":"应用目录","nro":18,"url":"3.创建Django项目和应用/image-20191220115930276.png","index":4,"caption_template":"Image - _CAPTION_","label":"应用目录","attributes":{},"skip":false,"key":"1.2.3.4"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.5","level":"1.2.3","list_caption":"Figure: 注册应用","alt":"注册应用","nro":19,"url":"3.创建Django项目和应用/image-20191220120819864.png","index":5,"caption_template":"Image - _CAPTION_","label":"注册应用","attributes":{},"skip":false,"key":"1.2.3.5"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.6","level":"1.2.3","list_caption":"Figure: book.apps.BookConfig","alt":"book.apps.BookConfig","nro":20,"url":"3.创建Django项目和应用/image-20191220120948473.png","index":6,"caption_template":"Image - _CAPTION_","label":"book.apps.BookConfig","attributes":{},"skip":false,"key":"1.2.3.6"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.7","level":"1.2.3","list_caption":"Figure: pycharm settings","alt":"pycharm settings","nro":21,"url":"3.创建Django项目和应用/image-20191220125745832.png","index":7,"caption_template":"Image - _CAPTION_","label":"pycharm settings","attributes":{},"skip":false,"key":"1.2.3.7"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.8","level":"1.2.3","list_caption":"Figure: 项目解释器","alt":"项目解释器","nro":22,"url":"3.创建Django项目和应用/image-20191220125822274.png","index":8,"caption_template":"Image - _CAPTION_","label":"项目解释器","attributes":{},"skip":false,"key":"1.2.3.8"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.9","level":"1.2.3","list_caption":"Figure: 添加解释器","alt":"添加解释器","nro":23,"url":"3.创建Django项目和应用/image-20191223141643045.png","index":9,"caption_template":"Image - _CAPTION_","label":"添加解释器","attributes":{},"skip":false,"key":"1.2.3.9"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.10","level":"1.2.3","list_caption":"Figure: 添加本地解释器","alt":"添加本地解释器","nro":24,"url":"3.创建Django项目和应用/image-20191220125836562.png","index":10,"caption_template":"Image - _CAPTION_","label":"添加本地解释器","attributes":{},"skip":false,"key":"1.2.3.10"},{"backlink":"1Django开发流程/3.创建Django项目和应用.html#fig1.2.3.11","level":"1.2.3","list_caption":"Figure: 添加完成","alt":"添加完成","nro":25,"url":"3.创建Django项目和应用/image-20191220125846033.png","index":11,"caption_template":"Image - _CAPTION_","label":"添加完成","attributes":{},"skip":false,"key":"1.2.3.11"},{"backlink":"1Django开发流程/4.模型定义和迁移.html#fig1.2.4.1","level":"1.2.4","list_caption":"Figure: 书籍和人物","alt":"书籍和人物","nro":26,"url":"4.模型/image-20191220135340612.png","index":1,"caption_template":"Image - _CAPTION_","label":"书籍和人物","attributes":{},"skip":false,"key":"1.2.4.1"},{"backlink":"1Django开发流程/4.模型定义和迁移.html#fig1.2.4.2","level":"1.2.4","list_caption":"Figure: orm","alt":"orm","nro":27,"url":"4.模型/orm.png","index":2,"caption_template":"Image - _CAPTION_","label":"orm","attributes":{},"skip":false,"key":"1.2.4.2"},{"backlink":"1Django开发流程/4.模型定义和迁移.html#fig1.2.4.3","level":"1.2.4","list_caption":"Figure: 迁移前migrations","alt":"迁移前migrations","nro":28,"url":"4.模型/image-20191220144813298.png","index":3,"caption_template":"Image - _CAPTION_","label":"迁移前migrations","attributes":{},"skip":false,"key":"1.2.4.3"},{"backlink":"1Django开发流程/4.模型定义和迁移.html#fig1.2.4.4","level":"1.2.4","list_caption":"Figure: 迁移后migrations","alt":"迁移后migrations","nro":29,"url":"4.模型/image-20191220144842981.png","index":4,"caption_template":"Image - _CAPTION_","label":"迁移后migrations","attributes":{},"skip":false,"key":"1.2.4.4"},{"backlink":"1Django开发流程/5.站点管理.html#fig1.2.5.1","level":"1.2.5","list_caption":"Figure: 本地化前","alt":"本地化前","nro":30,"url":"5.站点管理/image-20191223192623162.png","index":1,"caption_template":"Image - _CAPTION_","label":"本地化前","attributes":{},"skip":false,"key":"1.2.5.1"},{"backlink":"1Django开发流程/5.站点管理.html#fig1.2.5.2","level":"1.2.5","list_caption":"Figure: 本地化后","alt":"本地化后","nro":31,"url":"5.站点管理/image-20191223192635092.png","index":2,"caption_template":"Image - _CAPTION_","label":"本地化后","attributes":{},"skip":false,"key":"1.2.5.2"},{"backlink":"1Django开发流程/5.站点管理.html#fig1.2.5.3","level":"1.2.5","list_caption":"Figure: 创建管理员","alt":"创建管理员","nro":32,"url":"5.站点管理/image-20191223192853063.png","index":3,"caption_template":"Image - _CAPTION_","label":"创建管理员","attributes":{},"skip":false,"key":"1.2.5.3"},{"backlink":"1Django开发流程/5.站点管理.html#fig1.2.5.4","level":"1.2.5","list_caption":"Figure: 登陆站点","alt":"登陆站点","nro":33,"url":"5.站点管理/image-20191223193026956.png","index":4,"caption_template":"Image - _CAPTION_","label":"登陆站点","attributes":{},"skip":false,"key":"1.2.5.4"},{"backlink":"1Django开发流程/5.站点管理.html#fig1.2.5.5","level":"1.2.5","list_caption":"Figure: 登陆站点成功","alt":"登陆站点成功","nro":34,"url":"5.站点管理/image-20191223193122276.png","index":5,"caption_template":"Image - _CAPTION_","label":"登陆站点成功","attributes":{},"skip":false,"key":"1.2.5.5"},{"backlink":"1Django开发流程/5.站点管理.html#fig1.2.5.6","level":"1.2.5","list_caption":"Figure: image-20191223193352306","alt":"image-20191223193352306","nro":35,"url":"5.站点管理/image-20191223193352306.png","index":6,"caption_template":"Image - _CAPTION_","label":"image-20191223193352306","attributes":{},"skip":false,"key":"1.2.5.6"},{"backlink":"1Django开发流程/5.站点管理.html#fig1.2.5.7","level":"1.2.5","list_caption":"Figure: 注册模型后","alt":"注册模型后","nro":36,"url":"5.站点管理/image-20191223193433935.png","index":7,"caption_template":"Image - _CAPTION_","label":"注册模型后","attributes":{},"skip":false,"key":"1.2.5.7"},{"backlink":"1Django开发流程/5.站点管理.html#fig1.2.5.8","level":"1.2.5","list_caption":"Figure: 发布内容结果","alt":"发布内容结果","nro":37,"url":"5.站点管理/image-20191223193652901.png","index":8,"caption_template":"Image - _CAPTION_","label":"发布内容结果","attributes":{},"skip":false,"key":"1.2.5.8"},{"backlink":"1Django开发流程/6.视图定义和URL配置.html#fig1.2.6.1","level":"1.2.6","list_caption":"Figure: Http服务器工作流程","alt":"Http服务器工作流程","nro":38,"url":"6.视图和URL/image-20191225101021714.png","index":1,"caption_template":"Image - _CAPTION_","label":"Http服务器工作流程","attributes":{},"skip":false,"key":"1.2.6.1"},{"backlink":"1Django开发流程/6.视图定义和URL配置.html#fig1.2.6.2","level":"1.2.6","list_caption":"Figure: 定义视图","alt":"定义视图","nro":39,"url":"6.视图和URL/image-20191223195425749.png","index":2,"caption_template":"Image - _CAPTION_","label":"定义视图","attributes":{},"skip":false,"key":"1.2.6.2"},{"backlink":"1Django开发流程/6.视图定义和URL配置.html#fig1.2.6.3","level":"1.2.6","list_caption":"Figure: 查找视图的过程","alt":"查找视图的过程","nro":40,"url":"6.视图和URL/image-20191223195521663.png","index":3,"caption_template":"Image - _CAPTION_","label":"查找视图的过程","attributes":{},"skip":false,"key":"1.2.6.3"},{"backlink":"1Django开发流程/6.视图定义和URL配置.html#fig1.2.6.4","level":"1.2.6","list_caption":"Figure: URL配置入口","alt":"URL配置入口","nro":41,"url":"6.视图和URL/image-20191223195539635.png","index":4,"caption_template":"Image - _CAPTION_","label":"URL配置入口","attributes":{},"skip":false,"key":"1.2.6.4"},{"backlink":"1Django开发流程/6.视图定义和URL配置.html#fig1.2.6.5","level":"1.2.6","list_caption":"Figure: 多级URL配置匹配过程","alt":"多级URL配置匹配过程","nro":42,"url":"6.视图和URL/image-20191223195646894.png","index":5,"caption_template":"Image - _CAPTION_","label":"多级URL配置匹配过程","attributes":{},"skip":false,"key":"1.2.6.5"},{"backlink":"1Django开发流程/6.视图定义和URL配置.html#fig1.2.6.6","level":"1.2.6","list_caption":"Figure: 在项目中定义URLconf","alt":"在项目中定义URLconf","nro":43,"url":"6.视图和URL/image-20191223195607969.png","index":6,"caption_template":"Image - _CAPTION_","label":"在项目中定义URLconf","attributes":{},"skip":false,"key":"1.2.6.6"},{"backlink":"1Django开发流程/6.视图定义和URL配置.html#fig1.2.6.7","level":"1.2.6","list_caption":"Figure: 在应用中定义URLconf","alt":"在应用中定义URLconf","nro":44,"url":"6.视图和URL/image-20191223195638421.png","index":7,"caption_template":"Image - _CAPTION_","label":"在应用中定义URLconf","attributes":{},"skip":false,"key":"1.2.6.7"},{"backlink":"1Django开发流程/6.视图定义和URL配置.html#fig1.2.6.8","level":"1.2.6","list_caption":"Figure: 视图处理过程","alt":"视图处理过程","nro":45,"url":"6.视图和URL/image-20191223195700890.png","index":8,"caption_template":"Image - _CAPTION_","label":"视图处理过程","attributes":{},"skip":false,"key":"1.2.6.8"},{"backlink":"1Django开发流程/7.模板.html#fig1.2.7.1","level":"1.2.7","list_caption":"Figure: 创建模板","alt":"创建模板","nro":46,"url":"7.模板/image-20191225000958624.png","index":1,"caption_template":"Image - _CAPTION_","label":"创建模板","attributes":{},"skip":false,"key":"1.2.7.1"},{"backlink":"1Django开发流程/7.模板.html#fig1.2.7.2","level":"1.2.7","list_caption":"Figure: 设置模板查找路径","alt":"设置模板查找路径","nro":47,"url":"7.模板/image-20191225001250646.png","index":2,"caption_template":"Image - _CAPTION_","label":"设置模板查找路径","attributes":{},"skip":false,"key":"1.2.7.2"},{"backlink":"1Django开发流程/7.模板.html#fig1.2.7.3","level":"1.2.7","list_caption":"Figure: 加载模板文件","alt":"加载模板文件","nro":48,"url":"7.模板/image-20191225001502289.png","index":3,"caption_template":"Image - _CAPTION_","label":"加载模板文件","attributes":{},"skip":false,"key":"1.2.7.3"},{"backlink":"1Django开发流程/7.模板.html#fig1.2.7.4","level":"1.2.7","list_caption":"Figure: 创建模板文件","alt":"创建模板文件","nro":49,"url":"7.模板/image-20191225001627680.png","index":4,"caption_template":"Image - _CAPTION_","label":"创建模板文件","attributes":{},"skip":false,"key":"1.2.7.4"},{"backlink":"1Django开发流程/7.模板.html#fig1.2.7.5","level":"1.2.7","list_caption":"Figure: 模板渲染结果","alt":"模板渲染结果","nro":50,"url":"7.模板/image-20191225001659883.png","index":5,"caption_template":"Image - _CAPTION_","label":"模板渲染结果","attributes":{},"skip":false,"key":"1.2.7.5"},{"backlink":"1Django开发流程/7.模板.html#fig1.2.7.6","level":"1.2.7","list_caption":"Figure: View-Templates流程","alt":"View-Templates流程","nro":51,"url":"7.模板/image-20191225002033586.png","index":6,"caption_template":"Image - _CAPTION_","label":"View-Templates流程","attributes":{},"skip":false,"key":"1.2.7.6"},{"backlink":"1Django开发流程/8.案例.html#fig1.2.8.1","level":"1.2.8","list_caption":"Figure: 需求","alt":"需求","nro":52,"url":"8.案例/image-20191225002140555.png","index":1,"caption_template":"Image - _CAPTION_","label":"需求","attributes":{},"skip":false,"key":"1.2.8.1"},{"backlink":"1Django开发流程/9.配置文件和静态文件.html#fig1.2.9.1","level":"1.2.9","list_caption":"Figure: 错误追踪信息","alt":"错误追踪信息","nro":53,"url":"9.配置文件和静态文件/image-20191225092954023.png","index":1,"caption_template":"Image - _CAPTION_","label":"错误追踪信息","attributes":{},"skip":false,"key":"1.2.9.1"},{"backlink":"2模型/1.项目准备.html#fig1.3.1.1","level":"1.3.1","list_caption":"Figure: MVT工作流程","alt":"MVT工作流程","nro":54,"url":"1.项目准备/image-20191226111445887.png","index":1,"caption_template":"Image - _CAPTION_","label":"MVT工作流程","attributes":{},"skip":false,"key":"1.3.1.1"},{"backlink":"2模型/2.配置MySQL数据库.html#fig1.3.2.1","level":"1.3.2","list_caption":"Figure: ORM框架的优点","alt":"ORM框架的优点","nro":55,"url":"2.配置MySQL数据库/image-20191227155818652.png","index":1,"caption_template":"Image - _CAPTION_","label":"ORM框架的优点","attributes":{},"skip":false,"key":"1.3.2.1"},{"backlink":"2模型/4.Django的shell工具.html#fig1.3.4.1","level":"1.3.4","list_caption":"Figure: Django shell","alt":"Django shell","nro":56,"url":"4.Django的shell工具/image-20191226144210900.png","index":1,"caption_template":"Image - _CAPTION_","label":"Django shell","attributes":{},"skip":false,"key":"1.3.4.1"},{"backlink":"2模型/4.Django的shell工具.html#fig1.3.4.2","level":"1.3.4","list_caption":"Figure: mysqld.cnf","alt":"mysqld.cnf","nro":57,"url":"4.Django的shell工具/image-20191226144300048.png","index":2,"caption_template":"Image - _CAPTION_","label":"mysqld.cnf","attributes":{},"skip":false,"key":"1.3.4.2"},{"backlink":"2模型/5.数据库操作-增删改.html#fig1.3.5.1","level":"1.3.5","list_caption":"Figure: save","alt":"save","nro":58,"url":"5.数据库操作-增删改/image-20191226145727309.png","index":1,"caption_template":"Image - _CAPTION_","label":"save","attributes":{},"skip":false,"key":"1.3.5.1"},{"backlink":"2模型/5.数据库操作-增删改.html#fig1.3.5.2","level":"1.3.5","list_caption":"Figure: update","alt":"update","nro":59,"url":"5.数据库操作-增删改/image-20191229214605212.png","index":2,"caption_template":"Image - _CAPTION_","label":"update","attributes":{},"skip":false,"key":"1.3.5.2"},{"backlink":"2模型/6.查询操作/6.5.查询集QuerySet.html#fig1.3.6.5.1","level":"1.3.6.5","list_caption":"Figure: python语句","alt":"python语句","nro":60,"url":"6.5.查询集QuerySet/image-20191226170159299.png","index":1,"caption_template":"Image - _CAPTION_","label":"python语句","attributes":{},"skip":false,"key":"1.3.6.5.1"},{"backlink":"2模型/6.查询操作/6.5.查询集QuerySet.html#fig1.3.6.5.2","level":"1.3.6.5","list_caption":"Figure: sql日志","alt":"sql日志","nro":61,"url":"6.5.查询集QuerySet/image-20191226170206247.png","index":2,"caption_template":"Image - _CAPTION_","label":"sql日志","attributes":{},"skip":false,"key":"1.3.6.5.2"},{"backlink":"2模型/6.查询操作/6.5.查询集QuerySet.html#fig1.3.6.5.3","level":"1.3.6.5","list_caption":"Figure: python语句","alt":"python语句","nro":62,"url":"6.5.查询集QuerySet/image-20191226170214859.png","index":3,"caption_template":"Image - _CAPTION_","label":"python语句","attributes":{},"skip":false,"key":"1.3.6.5.3"},{"backlink":"2模型/6.查询操作/6.5.查询集QuerySet.html#fig1.3.6.5.4","level":"1.3.6.5","list_caption":"Figure: sql日志","alt":"sql日志","nro":63,"url":"6.5.查询集QuerySet/image-20191226170222771.png","index":4,"caption_template":"Image - _CAPTION_","label":"sql日志","attributes":{},"skip":false,"key":"1.3.6.5.4"},{"backlink":"2模型/6.查询操作/6.5.查询集QuerySet.html#fig1.3.6.5.5","level":"1.3.6.5","list_caption":"Figure: QuerySet和objects的关系","alt":"QuerySet和objects的关系","nro":64,"url":"6.5.查询集QuerySet/image-20191230180947303.png","index":5,"caption_template":"Image - _CAPTION_","label":"QuerySet和objects的关系","attributes":{},"skip":false,"key":"1.3.6.5.5"},{"backlink":"3视图/1.视图介绍和项目准备.html#fig1.4.1.1","level":"1.4.1","list_caption":"Figure: MVT工作流程","alt":"MVT工作流程","nro":65,"url":"1.视图介绍和项目准备/image-20191231100122474.png","index":1,"caption_template":"Image - _CAPTION_","label":"MVT工作流程","attributes":{},"skip":false,"key":"1.4.1.1"},{"backlink":"3视图/1.视图介绍和项目准备.html#fig1.4.1.2","level":"1.4.1","list_caption":"Figure: 视图处理过程","alt":"视图处理过程","nro":66,"url":"1.视图介绍和项目准备/image-20191223195700890.png","index":2,"caption_template":"Image - _CAPTION_","label":"视图处理过程","attributes":{},"skip":false,"key":"1.4.1.2"},{"backlink":"3视图/4.使用 PostMan 测试视图.html#fig1.4.4.1","level":"1.4.4","list_caption":"Figure: PostMan","alt":"PostMan","nro":67,"url":"4.使用 PostMan 对请求进行测试/image-20200102145024710.png","index":1,"caption_template":"Image - _CAPTION_","label":"PostMan","attributes":{},"skip":false,"key":"1.4.4.1"},{"backlink":"3视图/4.使用 PostMan 测试视图.html#fig1.4.4.2","level":"1.4.4","list_caption":"Figure: 下载PostMan","alt":"下载PostMan","nro":68,"url":"4.使用 PostMan 对请求进行测试/image-20200102143118012.png","index":2,"caption_template":"Image - _CAPTION_","label":"下载PostMan","attributes":{},"skip":false,"key":"1.4.4.2"},{"backlink":"3视图/4.使用 PostMan 测试视图.html#fig1.4.4.3","level":"1.4.4","list_caption":"Figure: 快捷启动图标","alt":"快捷启动图标","nro":69,"url":"4.使用 PostMan 对请求进行测试/image-20200102143837311.png","index":3,"caption_template":"Image - _CAPTION_","label":"快捷启动图标","attributes":{},"skip":false,"key":"1.4.4.3"},{"backlink":"3视图/4.使用 PostMan 测试视图.html#fig1.4.4.4","level":"1.4.4","list_caption":"Figure: 注册postman账号","alt":"注册postman账号","nro":70,"url":"4.使用 PostMan 对请求进行测试/image-20200102143554879.png","index":4,"caption_template":"Image - _CAPTION_","label":"注册postman账号","attributes":{},"skip":false,"key":"1.4.4.4"},{"backlink":"3视图/4.使用 PostMan 测试视图.html#fig1.4.4.5","level":"1.4.4","list_caption":"Figure: Postman界面","alt":"Postman界面","nro":71,"url":"4.使用 PostMan 对请求进行测试/image-20200102144007171.png","index":5,"caption_template":"Image - _CAPTION_","label":"Postman界面","attributes":{},"skip":false,"key":"1.4.4.5"},{"backlink":"3视图/5.HttpRequest对象.html#fig1.4.5.1","level":"1.4.5","list_caption":"Figure: CSRF防护","alt":"CSRF防护","nro":72,"url":"5.HttpRequest对象/csrf.png","index":1,"caption_template":"Image - _CAPTION_","label":"CSRF防护","attributes":{},"skip":false,"key":"1.4.5.1"},{"backlink":"3视图/7.状态保持.html#fig1.4.7.1","level":"1.4.7","list_caption":"Figure: 有会话保持","alt":"有会话保持","nro":73,"url":"7.状态保持/image-20200103173954091.png","index":1,"caption_template":"Image - _CAPTION_","label":"有会话保持","attributes":{},"skip":false,"key":"1.4.7.1"},{"backlink":"3视图/7.状态保持.html#fig1.4.7.2","level":"1.4.7","list_caption":"Figure: 无会话保持","alt":"无会话保持","nro":74,"url":"7.状态保持/image-20200103174111889.png","index":2,"caption_template":"Image - _CAPTION_","label":"无会话保持","attributes":{},"skip":false,"key":"1.4.7.2"},{"backlink":"3视图/7.状态保持/7.1.Cookie.html#fig1.4.7.1.1","level":"1.4.7.1","list_caption":"Figure: cookie原理","alt":"cookie原理","nro":75,"url":"7.1.Cookie/cookie原理.png","index":1,"caption_template":"Image - _CAPTION_","label":"cookie原理","attributes":{},"skip":false,"key":"1.4.7.1.1"},{"backlink":"3视图/7.状态保持/7.2.Session.html#fig1.4.7.2.1","level":"1.4.7.2","list_caption":"Figure: session原理图","alt":"session原理图","nro":76,"url":"7.2.Session/session原理图.png","index":1,"caption_template":"Image - _CAPTION_","label":"session原理图","attributes":{},"skip":false,"key":"1.4.7.2.1"},{"backlink":"3视图/7.状态保持/7.2.Session.html#fig1.4.7.2.2","level":"1.4.7.2","list_caption":"Figure: 启用Session","alt":"启用Session","nro":77,"url":"7.2.Session/session.png","index":2,"caption_template":"Image - _CAPTION_","label":"启用Session","attributes":{},"skip":false,"key":"1.4.7.2.2"},{"backlink":"3视图/7.状态保持/7.2.Session.html#fig1.4.7.2.3","level":"1.4.7.2","list_caption":"Figure: 安装Session应用","alt":"安装Session应用","nro":78,"url":"7.2.Session/session_install.png","index":3,"caption_template":"Image - _CAPTION_","label":"安装Session应用","attributes":{},"skip":false,"key":"1.4.7.2.3"},{"backlink":"3视图/7.状态保持/7.2.Session.html#fig1.4.7.2.4","level":"1.4.7.2","list_caption":"Figure: 数据库中的表","alt":"数据库中的表","nro":79,"url":"7.2.Session/session_mysql.png","index":4,"caption_template":"Image - _CAPTION_","label":"数据库中的表","attributes":{},"skip":false,"key":"1.4.7.2.4"},{"backlink":"3视图/7.状态保持/7.2.Session.html#fig1.4.7.2.5","level":"1.4.7.2","list_caption":"Figure: 表结构","alt":"表结构","nro":80,"url":"7.2.Session/session_desc.png","index":5,"caption_template":"Image - _CAPTION_","label":"表结构","attributes":{},"skip":false,"key":"1.4.7.2.5"},{"backlink":"3视图/7.状态保持/7.2.Session.html#fig1.4.7.2.6","level":"1.4.7.2","list_caption":"Figure: Redis连接错误","alt":"Redis连接错误","nro":81,"url":"7.2.Session/redis_error.png","index":6,"caption_template":"Image - _CAPTION_","label":"Redis连接错误","attributes":{},"skip":false,"key":"1.4.7.2.6"},{"backlink":"3视图/7.状态保持/7.2.Session.html#fig1.4.7.2.7","level":"1.4.7.2","list_caption":"Figure: 修改redis绑定的地址","alt":"修改redis绑定的地址","nro":82,"url":"7.2.Session/redis_bind.png","index":7,"caption_template":"Image - _CAPTION_","label":"修改redis绑定的地址","attributes":{},"skip":false,"key":"1.4.7.2.7"},{"backlink":"3视图/8.类视图与中间件/8.1.类视图.html#fig1.4.8.1.1","level":"1.4.8.1","list_caption":"Figure: 需求","alt":"需求","nro":83,"url":"8.1.类视图/image-20200105202445515.png","index":1,"caption_template":"Image - _CAPTION_","label":"需求","attributes":{},"skip":false,"key":"1.4.8.1.1"},{"backlink":"3视图/8.类视图与中间件/8.2.中间件.html#fig1.4.8.2.1","level":"1.4.8.2","list_caption":"Figure: http服务器工作流程","alt":"http服务器工作流程","nro":84,"url":"8.2.中间件/image-20191219121415323.png","index":1,"caption_template":"Image - _CAPTION_","label":"http服务器工作流程","attributes":{},"skip":false,"key":"1.4.8.2.1"},{"backlink":"3视图/8.类视图与中间件/8.2.中间件.html#fig1.4.8.2.2","level":"1.4.8.2","list_caption":"Figure: 执行结果","alt":"执行结果","nro":85,"url":"8.2.中间件/middlewareresult-7793529.png","index":2,"caption_template":"Image - _CAPTION_","label":"执行结果","attributes":{},"skip":false,"key":"1.4.8.2.2"},{"backlink":"3视图/8.类视图与中间件/8.2.中间件.html#fig1.4.8.2.3","level":"1.4.8.2","list_caption":"Figure: 执行顺序","alt":"执行顺序","nro":86,"url":"8.2.中间件/order.png","index":3,"caption_template":"Image - _CAPTION_","label":"执行顺序","attributes":{},"skip":false,"key":"1.4.8.2.3"},{"backlink":"4模板/1.Django使用自带模板/1.2.模板语法.html#fig1.5.1.2.1","level":"1.5.1.2","list_caption":"Figure: 模板变量","alt":"模板变量","nro":87,"url":"1.2.模板语法/image-20200106150706634.png","index":1,"caption_template":"Image - _CAPTION_","label":"模板变量","attributes":{},"skip":false,"key":"1.5.1.2.1"},{"backlink":"4模板/2.Django使用jinja2模板.html#fig1.5.2.1","level":"1.5.2","list_caption":"Figure: loop","alt":"loop","nro":88,"url":"2.Django使用jinja2模板/image-20200106105817377.png","index":1,"caption_template":"Image - _CAPTION_","label":"loop","attributes":{},"skip":false,"key":"1.5.2.1"},{"backlink":"4模板/2.Django使用jinja2模板.html#fig1.5.2.2","level":"1.5.2","list_caption":"Figure: jinja2内置过滤器","alt":"jinja2内置过滤器","nro":89,"url":"2.Django使用jinja2模板/image-20200106220539707.png","index":2,"caption_template":"Image - _CAPTION_","label":"jinja2内置过滤器","attributes":{},"skip":false,"key":"1.5.2.2"},{"backlink":"4模板/3.CSRF.html#fig1.5.3.1","level":"1.5.3","list_caption":"Figure: CSRF攻击示意图","alt":"CSRF攻击示意图","nro":90,"url":"3.CSRF/image-20200106110826927.png","index":1,"caption_template":"Image - _CAPTION_","label":"CSRF攻击示意图","attributes":{},"skip":false,"key":"1.5.3.1"},{"backlink":"4模板/3.CSRF.html#fig1.5.3.2","level":"1.5.3","list_caption":"Figure: 查看cookie和html","alt":"查看cookie和html","nro":91,"url":"3.CSRF/image-20200106110906492.png","index":2,"caption_template":"Image - _CAPTION_","label":"查看cookie和html","attributes":{},"skip":false,"key":"1.5.3.2"}]},"title":"Django基础","language":"zh-hans","gitbook":"3.2.3","description":"蜗牛学院 《Pyhthon全栈开发实战》课程 Django 框架基础模块讲义"},"file":{"path":"1Django开发流程/4.模型定义和迁移.md","mtime":"2019-12-24T06:41:01.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-08T02:36:00.235Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-zealar/test.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fancybox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fancybox/jquery.mousewheel.pack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fancybox/jquery.fancybox.pack.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fancybox/jquery.fancybox-buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fancybox/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

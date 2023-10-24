@@ -122,4 +122,5 @@ class UsersConfig(AppConfig):
 ### 模型完整讲解
 
 * 配置MySQL数据库
+* 修改settings.py中的配置数据库信息
 
