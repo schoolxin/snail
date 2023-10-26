@@ -6,7 +6,7 @@
 
 from django.conf.urls import url
 
-from library.views import test, index, post_form, post_json
+from library.views import test, index, post_form, post_json, create_response, create_jsonresponse
 
 urlpatterns = [
     # http://127.0.0.1:8000/test/项目中匹配完  剩下test/ 用于匹配
@@ -19,4 +19,6 @@ urlpatterns = [
     # http://127.0.0.1:8000/post_form/
     url(r'^post_form/$', post_form),
     url(r'^post_json/$', post_json),
+    url(r'^create_response/$', create_response),
+    url(r'^create_jsonresponse/$', create_jsonresponse),
 ]
