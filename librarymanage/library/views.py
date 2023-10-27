@@ -3,6 +3,7 @@ import json
 from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views import View
 
 
 # Create your views here.
@@ -111,3 +112,24 @@ def set_session(request: HttpRequest):
 def get_session(request: HttpRequest):
     print(request.session.get('user_id'))
     return HttpResponse("get_session")
+
+
+def register(request: HttpRequest):
+    if request.method == 'GET':
+        return render(request, 'register.html')
+    elif request.method == 'POST':
+        # 处理注册请求逻辑
+        return HttpResponse("register")
+    else:
+        pass
+
+    return HttpResponse("register")
+
+
+# 类视图
+class Register(View):
+    def get(self, request):
+        return render(request, 'register.html')
+
+    def post(self, request):
+        return HttpResponse("post")

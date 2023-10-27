@@ -7,7 +7,7 @@
 from django.conf.urls import url
 
 from library.views import test, index, post_form, post_json, create_response, create_jsonresponse, set_cookie, \
-    set_session, get_session
+    set_session, get_session, register,Register
 
 urlpatterns = [
     # http://127.0.0.1:8000/test/项目中匹配完  剩下test/ 用于匹配
@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^set_cookie/$', set_cookie),
     url(r'^set_session/$', set_session),
     url(r'^get_session/$', get_session),
+    # url(r'^register/$', register),
+    url(r'^register/$', Register.as_view()),
 ]
