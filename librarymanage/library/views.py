@@ -1,3 +1,4 @@
+import datetime
 import json
 
 from django.http import HttpRequest, HttpResponse, JsonResponse
@@ -133,3 +134,37 @@ class Register(View):
 
     def post(self, request):
         return HttpResponse("post")
+
+
+def test_middleware(request: HttpRequest):
+    print("视图函数处理")
+    return HttpResponse("middleware")
+
+
+def test_template(request: HttpRequest):
+    username = request.GET.get('name', 'wangwu')
+    contexts = {
+        "username": username
+    }
+    return render(request, "index.html", context=contexts)
+
+
+def home(request: HttpRequest):
+    contexts = {
+        'school': 'woniuxy',
+        'assets': 100000000,
+        'is_accept': True,
+        'areas': ['成都校区', '重庆校区', '武汉校区', '天府校区'],
+        'subject': {
+            'name': 'python',
+            'count': 600,
+            'price': 20000,
+            # "description":"<script>alert('tt')</script>"
+            'create_date': datetime.datetime.now()
+        }
+    }
+    return render(request, "home.html", context=contexts)
+
+
+def detail(request: HttpRequest):
+    return render(request, 'detail.html')
