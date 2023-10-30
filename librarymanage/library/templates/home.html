@@ -11,8 +11,8 @@
     {#        <li>校区:{{ areas.0 }}</li>#}
     {#        <li>校区:{{ areas.1 }}</li>#}
     {#        <li>校区:{{ areas.3 }}</li>#}
-    {% for area in areas %}
-        <li>校区:{{ forloop.counter }}{{ area }}</li>
+    {% for area in areas|list_reverse %}
+        <li>校区:{{ loop.index }}{{ area }}</li>
     {% endfor %}
 
     {% if subject.price > 100 %}
@@ -24,12 +24,16 @@
         学科描述：{{ subject.description|safe }}
     </p>
     <li>校区数量:{{ areas|length }}</li>
-    <li>学校面积:{{ area|default:'2000' }}</li>
-    <li>学科创建日期:{{ subject.create_date|date:"Y年m月d日" }}</li>
+    <li>学校面积:{{ area|default('no value') }}</li>
+    <li>学科创建日期:{{ subject.create_date|date("Y年m月d日") }}</li>
     {#    #}
     {##}
     {#        <li>学科:{{ subject.name }}</li>#}
     {#        <li>学科学费:{{ subject.price }}</li>#}
+    {% for i in range(0,10) %}
+        <li>{{ i }}</li>
+    {% endfor %}
+    
 </ul>
 </body>
 </html>

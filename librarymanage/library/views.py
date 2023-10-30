@@ -3,6 +3,7 @@ import json
 
 from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
+from django.template import loader
 from django.urls import reverse
 from django.views import View
 
@@ -159,11 +160,13 @@ def home(request: HttpRequest):
             'name': 'python',
             'count': 600,
             'price': 20000,
-            # "description":"<script>alert('tt')</script>"
+            "description":"<script>alert('tt')</script>",
             'create_date': datetime.datetime.now()
         }
     }
-    return render(request, "home.html", context=contexts)
+    print("home")
+    template = loader.get_template('home.html')
+    return HttpResponse(template.render(contexts))
 
 
 def detail(request: HttpRequest):

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    # url(r'^admin/', admin.site.urls),
     # 只要不是admin/ 都算匹配成功
     # http://127.0.0.1:8000/test/
     url(r'^', include(('library.urls','library'), namespace='library1')),  # 项目名.urls
